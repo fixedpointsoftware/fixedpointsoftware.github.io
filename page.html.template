@@ -17,12 +17,27 @@
   </div>
 
   <div class="footer">
-    <a href="index.html">Fixed Point Software © 2025</a>|
-    <a href="contact.html">Contact</a>
+    <p>
+      <a href="index.html">
+        <img src="home1.png" style="height: 1em; vertical-align: middle;"/>
+      </a>
+      |
+      <a href="mailto:info@fixf.dev">
+        <img src="mail2.png" style="height: 1.5em; vertical-align: middle;"/>
+      </a>
+      |
+      <a href="https://bsky.app/profile/fixedpointsoftware.bsky.social">
+        <img src="bluesky.png" style="height: 1em; vertical-align: middle;"/>
+      </a>
+    </p>
+    <p class="company">
+      Fixed Point Software © 2025
+    </p>
   </div>
   <div class="acknowledgements">
     <p>
-      Uses <a href="http://www.onlinewebfonts.com/fonts">Web Fonts</a>.
+      Uses <a href="http://www.onlinewebfonts.com/fonts">Web Fonts</a>
+      &amp; <a href="https://www.flaticon.com">FLATICON</a>
     </p>
   </div>
 </body>
