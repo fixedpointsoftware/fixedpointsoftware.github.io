@@ -12,7 +12,7 @@
 }
 
 :root {
-  /* Solarized color variables */
+  /* Solarized theme colors */
   --solarized-base03: #002b36;
   --solarized-black: #002b36;
   --solarized-base02: #073642;
@@ -22,7 +22,6 @@
   --solarized-base1: #93a1a1;
   --solarized-base2: #eee8d5;
   --solarized-base3: #fdf6e3;
-  --solarized-base4: #fcf9ef;
   --solarized-yellow: #b58900;
   --solarized-orange: #cb4b16;
   --solarized-red: #dc322f;
@@ -31,6 +30,10 @@
   --solarized-blue: #268bd2;
   --solarized-cyan: #2aa198;
   --solarized-green: #859900;
+
+  /* FixF custom colors */
+  --fixf-background: #fcf9ef;
+  --fixf-darkblue: #175683;
 
   /* Logo colors */
   --logo-black: #000000;
@@ -44,7 +47,7 @@ html {
 }
 
 body {
-  background-color: var(--solarized-base4);
+  background-color: var(--fixf-background);
   color: var(--solarized-base00);
   display: flex;
   flex-direction: column;
@@ -56,7 +59,7 @@ body {
 }
 
 a {
-  color: var(--solarized-blue);
+  color: var(--fixf-darkblue);
   text-decoration: none;
 }
 
