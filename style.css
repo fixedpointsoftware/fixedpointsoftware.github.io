@@ -40,18 +40,28 @@
 
 html {
   background-color: var(--solarized-base4);
+  height: 100%;
 }
 
 body {
   background-color: var(--solarized-base4);
   color: var(--solarized-base00);
   font-family: "Microgramma W01 Med Extended";
-  margin-top: 1em;
-  margin-left: 3em;
-  margin-right: 3em;
-  padding: 1em;
+  margin: 0;
+  padding: 0;
   text-align: left;
-  width: 40em;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Excludes footer to force it to the bottom */
+.content {
+  max-width: 40em;
+  width: 90%;
+  margin: 1em auto;
+  padding: 1em;
+  flex: 1 0 auto;
 }
 
 .header {
@@ -89,10 +99,12 @@ body {
 }
 
 .logoimg {
-  height: 4em;
+  height: auto;
+  max-height: 4em;
   vertical-align: middle;
   margin: 0;
   padding: 0;
+  max-width: 100%;
 }
 
 .logonback {
@@ -102,21 +114,56 @@ body {
 }
 
 .footer {
-  position: absolute;
-  bottom: 1em;
   font-size: 0.75em;
   font-weight: bold;
   text-align: left;
 }
 
-h1 {
-  font-size: 1.2em;
-  font-weight: bold;
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-a,
-a:visited {
-  color: steelblue;
-  font-weight: normal;
-  text-decoration: none;
+a img {
+  max-height: 1.5em;
+  width: auto;
+  vertical-align: bottom;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  body {
+    margin: 0.5em auto;
+    padding: 0.5em;
+    width: 95%;
+  }
+
+  .header {
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+  }
+
+  .logoimg {
+    max-height: 3em;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    margin: 0.25em auto;
+    padding: 0.25em;
+  }
+
+  .header {
+    margin-top: 0.25em;
+    margin-bottom: 0.5em;
+  }
+
+  .logoimg {
+    max-height: 2.5em;
+  }
+
+  h1 {
+    font-size: 1em;
+  }
 }
