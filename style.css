@@ -46,29 +46,46 @@ html {
 body {
   background-color: var(--solarized-base4);
   color: var(--solarized-base00);
-  font-family: "Microgramma W01 Med Extended";
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: "Microgramma W01 Med Extended";
+  padding-left: 10em;
+  max-width: 40em;
+  min-height: 90vh;
+  text-align: center;
 }
 
-/* Excludes footer to force it to the bottom */
-.content {
-  max-width: 40em;
+/* Page width*/
+.header,
+.content,
+.footer,
+.acknowledgements {
+  margin-left: 1em auto;
+  margin-right: 1em auto;
+  text-align: left;
   width: 90%;
-  margin: 1em auto;
-  padding: 1em;
+}
+
+.content {
   flex: 1 0 auto;
 }
 
 .header {
   border-bottom: var(--solarized-orange) 1px solid;
+  margin-bottom: 1em;
   margin-top: 1em;
-  margin-bottom: 2em;
-  text-align: left;
+}
+
+.footer {
+  border-top: var(--solarized-orange) 1px solid;
+  padding-top: 1em;
+  font-size: 0.75em;
+  font-weight: bold;
+}
+
+.acknowledgements {
+  font-size: 0.5em;
+  font-weight: bold;
 }
 
 .name {
@@ -113,11 +130,7 @@ body {
   font-size: 1.5em;
 }
 
-.footer {
-  font-size: 0.75em;
-  font-weight: bold;
-  text-align: left;
-}
+
 
 img {
   max-width: 100%;
