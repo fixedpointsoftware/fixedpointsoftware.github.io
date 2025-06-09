@@ -55,6 +55,11 @@ body {
   text-align: center;
 }
 
+a {
+  color: var(--solarized-blue);
+  text-decoration: none;
+}
+
 /* Page width*/
 .header,
 .content,
@@ -78,8 +83,9 @@ body {
 
 .footer {
   border-top: var(--solarized-orange) 1px solid;
+  color: black;
   padding-top: 1em;
-  font-size: 0.75em;
+  font-size: 0.65em;
   font-weight: bold;
 }
 

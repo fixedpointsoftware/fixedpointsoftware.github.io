@@ -16,9 +16,14 @@
     {{content}}
   </div>
 
-  <div class="footer">Fixed Point Software © 2025</div>
+  <div class="footer">
+    <a href="index.html">Fixed Point Software © 2025</a>|
+    <a href="contact.html">Contact</a>
+  </div>
   <div class="acknowledgements">
-    <a href="http://www.onlinewebfonts.com/fonts">Web Fonts</a>
+    <p>
+      Uses <a href="http://www.onlinewebfonts.com/fonts">Web Fonts</a>.
+    </p>
   </div>
 </body>
 
