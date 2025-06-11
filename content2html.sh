@@ -4,8 +4,9 @@
 # the specified template file.
 CONTENT_FILE=$1
 TEMPLATE_FILE=$2
+OUTPUT_FILE=$3
 
-USAGE="Usage: $0 <content-file> <template-file>"
+USAGE="Usage: $0 <content-file> <template-file> <output-file> [--replace-xxx=text]"
 
 if ! [ -e "$CONTENT_FILE" ]; then
     echo "Content file not found!"
@@ -18,9 +19,19 @@ if ! [ -e "$TEMPLATE_FILE" ]; then
     exit 1
 fi
 
-# Replace the placeholder "{{content}}" in the template with the content from
-# the content file.
+# Replace the placeholder "{{content}}" in $OUTPUT_FILE with the contents of $CONTENT_FILE.
 sed "/{{content}}/{
     r $CONTENT_FILE
     d
-}" $TEMPLATE_FILE
+}" $TEMPLATE_FILE > $OUTPUT_FILE
+
+
+# For any command line argument of the form --replace-xxx=text, replace
+# the placeholder "{{xxx}}" in the template with the specified text.
+for arg in "$@"; do
+    if [[ $arg == --replace-* ]]; then
+        key=${arg%%=*}
+        value=${arg#*=}
+        sed -i .bak "s/{{${key#--replace-}}}/$value/g" $OUTPUT_FILE
+    fi
+done
