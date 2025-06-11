@@ -34,7 +34,6 @@
   /* FixF custom colors */
   --fixf-background: #fcf9ef;
   --fixf-darkblue: #175683;
-  --fixf-background: var(--solarized-base4);
 
   /* Logo colors */
   --logo-black: #000000;
