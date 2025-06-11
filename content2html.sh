@@ -35,3 +35,20 @@ for arg in "$@"; do
         sed -i .bak "s/{{${key#--replace-}}}/$value/g" $OUTPUT_FILE
     fi
 done
+
+# For any command line argument of the form --freplace-xxx=filename, replace
+# the placeholder "{{xxx}}" in the template with the contents of filename.
+for arg in "$@"; do
+    if [[ $arg == --freplace-* ]]; then
+        key=${arg%%=*}
+        file=${arg#*=}
+        if [ -e "$file" ]; then
+            sed -i .bak "/{{${key#--freplace-}}}/{
+                r $file
+                d
+            }" $OUTPUT_FILE
+        else
+            echo "File $file not found for replacement!"
+        fi
+    fi
+done
