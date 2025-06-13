@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>visual 𝑛-back</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://fixf.dev/style.css" type="text/css">
+  <style>
+  p {
+    line-height: 1.75em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  button,
+  .eg-button {
+    background-color: var(--solarized-base1);
+    color: var(--solarized-base03);
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    font-family: "Microgramma W01 Med Extended";
+    font-size: 0.7em;
+    margin: 0.5em;
+    min-width: 5em;
+    padding: 1em;
+    text-transform: uppercase;
+  }
+
+  button[disabled=true] {
+    background-color: var(--solarized-base0);
+  }
+
+  .eg-button {
+    cursor: text;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+    padding-top: 0.75em;
+    padding-bottom: 0.5em;
+    margin: 0em;
+    vertical-align: baseline;
+  }
+
+  .cfg-input {
+    padding-left: 1em;
+    text-align: left;
+  }
+
+  .cfg-label {
+    text-align: right;
+  }
+
+  .cfg-table {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  .close-button {
+    background-color: var(--fixf-background);
+    font-size: 1.5em;
+    min-width: 1.5em;
+    padding: 0.5em;
+    text-decoration: underline;
+  }
+
+  .game-description {
+    text-align: justify;
+  }
+
+  .grid {
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-top: 2em;
+    margin-bottom: 3em;
+  }
+
+  .grid-cell {
+    border: 1px solid var(--solarized-blue);
+    font-size: 4em;
+    width: 1.5em;
+    height: 1.5em;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  /* Media Queries for Responsive Design */
+  @media (max-width: 768px) {
+    body {
+      margin: 0.5em auto;
+      padding: 0.5em;
+      width: 95%;
+      font-size: 0.8em;
+    }
+
+    .header {
+      margin-top: 0.5em;
+      margin-bottom: 1em;
+    }
+
+    .logoimg {
+      max-height: 3em;
+    }
+  }
+
+  @media (max-width: 480px) {
+    body {
+      margin: 0.25em auto;
+      padding: 0.25em;
+      font-size: 0.7em;
+    }
+
+    .header {
+      margin-top: 0.25em;
+      margin-bottom: 0.5em;
+    }
+
+    .logoimg {
+      max-height: 2.5em;
+    }
+
+    h1 {
+      font-size: 1em;
+    }
+  }  </style>
+<link rel="modulepreload" href="/nback-22e660d2cb01ad1c.js" crossorigin="anonymous" integrity="sha384-bQS0dcBoCBwRAatajBUxjnLr2Yodn6i4Ta1C+rvwVgXCCHsW5YS23MkhmaZobNOY"><link rel="preload" href="/nback-22e660d2cb01ad1c_bg.wasm" crossorigin="anonymous" integrity="sha384-nkwJGq1oBloJnkqWC5Ufe7VPCQilQ6pzWToBw4afZ1jp7GWEbDudhTfKnPT3IkuO" as="fetch" type="application/wasm"></head>
+
+<body>
+  <div class="header">
+    <a href="https://fixf.dev/index.html">
+      <img src="https://fixf.dev/icons/fixflogo.png" class="logoimg" />
+    </a>
+  </div>
+
+  <div class="content">
+<div id="id-app-container" class="app-container">
+  <div id="id-app"></div>
+</div>  </div>
+
+  <div class="footer">
+    <p>
+      <a href="https://fixf.dev/index.html">
+        <img src="https://fixf.dev/icons/home1.png"
+          style="height: 1em; vertical-align: middle;" />
+      </a>
+      |
+      <a href="mailto:info@fixf.dev">
+        <img src="https://fixf.dev/icons/mail2.png"
+          style="height: 1.5em; vertical-align: middle;" />
+      </a>
+      |
+      <a href="https://bsky.app/profile/fixedpointsoftware.bsky.social">
+        <img src="https://fixf.dev/icons/bluesky.png"
+          style="height: 1em; vertical-align: middle;" />
+      </a>
+    </p>
+    <p class="company">
+      Fixed Point Software LLC © 2025
+    </p>
+  </div>
+  <div class="acknowledgements">
+    <p>
+      Uses
+      <a href="https://ethanschoonover.com/solarized/">Solarized</a>,
+      <a href="http://www.onlinewebfonts.com/fonts">Web Fonts</a> &amp;
+      <a href="https://www.flaticon.com">FLATICON</a>
+    </p>
+  </div>
+
+<script type="module">
+import init, * as bindings from '/nback-22e660d2cb01ad1c.js';
+const wasm = await init({ module_or_path: '/nback-22e660d2cb01ad1c_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script></body>
+
+</html>
