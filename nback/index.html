@@ -7,22 +7,24 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://fixf.dev/style.css" type="text/css">
   <style>
+
 button,
 .eg-button {
   background-color: var(--solarized-base2);
-  border: 0;
+  border: 1px solid var(--solarized-yellow);
   border-radius: 5px;
   color: var(--solarized-base03);
   cursor: pointer;
   font-family: "Microgramma W01 Med Extended";
-  font-size: 0.7em;
+  font-size: 0.8em;
   margin: 0.5em;
   min-width: 5em;
-  padding: 1em;
+  padding: 0.75em;
   text-transform: uppercase;
 }
 
-button[disabled=true] {
+button[disabled=true], 
+button[disabled="disabled"] {
   background-color: var(--solarized-base0);
 }
 
@@ -53,6 +55,8 @@ p {
 
 .close-button {
   background-color: var(--fixf-background);
+  border: 0;
+  color: var(--solarized-yellow);
   font-size: 1.25em;
   margin: 0;
   min-width: 1.25em;
@@ -81,7 +85,7 @@ p {
 }
 
 .game-container {
-  border: 1px solid var(--solarized-base2);
+  border: 1px solid var(--solarized-yellow);
   border-radius: 5px;
   margin: 2em;
   padding: 1em;
