@@ -7,7 +7,6 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://fixf.dev/style.css" type="text/css">
   <style>
-
 button,
 .eg-button {
   background-color: var(--solarized-base2);
@@ -23,7 +22,7 @@ button,
   text-transform: uppercase;
 }
 
-button[disabled=true], 
+button[disabled=true],
 button[disabled="disabled"] {
   background-color: var(--solarized-base0);
 }
@@ -115,6 +114,17 @@ p {
   text-align: right;
 }
 
+/* Floating centered banner */
+.game-over {
+  color: var(--fixf-darkblue);
+  opacity: 0.8;
+  font-size: 8em;
+  position: absolute;
+  text-align: center;
+  top: 35%;
+  z-index: 1000;
+}
+
 .game-stats-name {
   min-width: 5em;
   padding-right: 2em;
@@ -157,20 +167,16 @@ p {
   }
 
   .header {
-    .header {
-      margin-bottom: 0.5em;
-      bottom: 0.5em;
-      margin-top: 0.25em;
-      ;
-    }
+    margin-bottom: 0.5em;
+    bottom: 0.5em;
+    margin-top: 0.25em;
+  }
 
-    .logoimg {
-      oimg {
-        max-height: 2.5em;
-        em;
-      }
-    }  </style>
-<link rel="modulepreload" href="https://fixf.dev/nback/nback-957bbda79c5d5407.js" crossorigin="anonymous" integrity="sha384-LT7eSupEOG7HNyeGGn4g5ZW4g9JqBwOFdWEp7phHMbgNpG9ziR1Gz+BWm2hA08rQ"><link rel="preload" href="https://fixf.dev/nback/nback-957bbda79c5d5407_bg.wasm" crossorigin="anonymous" integrity="sha384-J1R0/5PNjyQCSFh9K1uvGjiNcoDdF2JGLI9yl1pkTYW7BCldMGC+lVoKJZWy9VyI" as="fetch" type="application/wasm"></head>
+  .logoimg {
+    max-height: 2.5em;
+  }
+}  </style>
+<link rel="modulepreload" href="https://fixf.dev/nback/nback-db88a6b99ed6c1b7.js" crossorigin="anonymous" integrity="sha384-4VBRJUB8hfQYTic6EFlhlo/2CJwN0iFeDt+6NYramAj0b/VdUC5yiHBhSeAkDt14"><link rel="preload" href="https://fixf.dev/nback/nback-db88a6b99ed6c1b7_bg.wasm" crossorigin="anonymous" integrity="sha384-Q5eaH3Ob+mebMFYwdvemgLBoMzm3aZXetw7deH4RNLcLCyPYQYJlO+RV+M8ba3Sy" as="fetch" type="application/wasm"></head>
 
 <body>
   <div class="header">
@@ -215,8 +221,8 @@ p {
   </div>
 
 <script type="module">
-import init, * as bindings from 'https://fixf.dev/nback/nback-957bbda79c5d5407.js';
-const wasm = await init({ module_or_path: 'https://fixf.dev/nback/nback-957bbda79c5d5407_bg.wasm' });
+import init, * as bindings from 'https://fixf.dev/nback/nback-db88a6b99ed6c1b7.js';
+const wasm = await init({ module_or_path: 'https://fixf.dev/nback/nback-db88a6b99ed6c1b7_bg.wasm' });
 
 
 window.wasmBindings = bindings;
