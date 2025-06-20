@@ -708,11 +708,11 @@ function __wbg_get_imports() {
         const ret = makeMutClosure(arg0, arg1, 61, __wbg_adapter_28);
         return ret;
     };
-    imports.wbg.__wbindgen_closure_wrapper1367 = function(arg0, arg1, arg2) {
+    imports.wbg.__wbindgen_closure_wrapper1371 = function(arg0, arg1, arg2) {
         const ret = makeMutClosure(arg0, arg1, 66, __wbg_adapter_28);
         return ret;
     };
-    imports.wbg.__wbindgen_closure_wrapper2310 = function(arg0, arg1, arg2) {
+    imports.wbg.__wbindgen_closure_wrapper2314 = function(arg0, arg1, arg2) {
         const ret = makeClosure(arg0, arg1, 73, __wbg_adapter_36);
         return ret;
     };

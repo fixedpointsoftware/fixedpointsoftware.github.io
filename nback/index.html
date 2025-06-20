@@ -27,15 +27,19 @@ button[disabled="disabled"] {
   background-color: var(--solarized-base0);
 }
 
-h2 {
+h1, h2, h3, h4, h5, h6 {
   color: var(--fixf-darkblue);
-  font-size: 2em;
   text-align: left;
 }
 
-p {
+p,
+.description-container {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   line-height: 1.75em;
+}
+
+.cfg-container {
+  margin-bottom: 1em;
 }
 
 .cfg-input {
@@ -77,10 +81,6 @@ p {
   align-items: center;
   display: flex;
   flex-direction: column;
-}
-
-.game-description {
-  text-align: justify;
 }
 
 .game-container {
@@ -175,8 +175,32 @@ p {
   .logoimg {
     max-height: 2.5em;
   }
-}  </style>
-<link rel="modulepreload" href="https://fixf.dev/nback/nback-28e2434768994980.js" crossorigin="anonymous" integrity="sha384-O/Qerr40xIQqXMA845d2LxvodjtA16WwsS2xez0SfEDHFrYpwDT6RT+0/cEWffp8"><link rel="preload" href="https://fixf.dev/nback/nback-28e2434768994980_bg.wasm" crossorigin="anonymous" integrity="sha384-ngrjfBnfB+SpTb5XJTG0XK+R4XDndjduJZPZSWtj5qUd/O2SKEnEXAItY7q+0A+n" as="fetch" type="application/wasm"></head>
+}
+
+.description-container {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+.description {
+  text-align: justify;
+}
+
+.container-toggle,
+.container-toggle:hover {
+  background-color: var(--fixf-background);
+  border: 0;
+  color: var(--fixf-darkblue);
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 0;
+  min-width: 1em;
+  padding: 0;
+}
+  </style>
+<link rel="modulepreload" href="https://fixf.dev/nback/nback-f83b643d17d61bb0.js" crossorigin="anonymous" integrity="sha384-CkR85nw1eB14x/0VptcprmjYxWR2HQKwBaQprQz0yGBwxIy+RV2/rkueNI/aoK+M"><link rel="preload" href="https://fixf.dev/nback/nback-f83b643d17d61bb0_bg.wasm" crossorigin="anonymous" integrity="sha384-wEu6/jlECnguTqvj0SG97NWgGWeS1AKWl2D5Pb8iU5bSTG7c5JObuAIzCu6F6EEg" as="fetch" type="application/wasm"></head>
 
 <body>
   <div class="header">
@@ -221,8 +245,8 @@ p {
   </div>
 
 <script type="module">
-import init, * as bindings from 'https://fixf.dev/nback/nback-28e2434768994980.js';
-const wasm = await init({ module_or_path: 'https://fixf.dev/nback/nback-28e2434768994980_bg.wasm' });
+import init, * as bindings from 'https://fixf.dev/nback/nback-f83b643d17d61bb0.js';
+const wasm = await init({ module_or_path: 'https://fixf.dev/nback/nback-f83b643d17d61bb0_bg.wasm' });
 
 
 window.wasmBindings = bindings;
