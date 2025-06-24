@@ -119,17 +119,15 @@ p,
   text-align: right;
 }
 
-/* Floating centered banner */
 .game-over {
+}
+
+.game-over-title {
   color: var(--solarized-orange);
-  opacity: 0.8;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-size: 10em;
+  font-size: 3.5em;
   font-weight: bolder;
-  position: absolute;
+  padding: 1em;
   text-align: center;
-  top: 35%;
-  z-index: 1000;
 }
 
 .game-stats-name {
@@ -141,6 +139,14 @@ p,
 .game-stats-value {
   min-width: 5em;
   text-align: left;
+}
+
+.menu-container {
+  border-top: 1px solid var(--solarized-yellow);
+  border-bottom: 1px solid var(--solarized-yellow);
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-bottom: 2em;;
 }
 
 /* Media Queries for Responsive Design */
@@ -205,8 +211,71 @@ p,
   margin: 0;
   min-width: 1em;
   padding: 0;
+}
+
+
+.chart {
+  .axis.left {
+    .title {
+      transform: rotate(270deg);
+    }
+  }
+
+  .axis.right {
+    .title {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+
+.chart {
+  max-width: 1332px;
+
+  .axis {
+    .title {
+      color: var(--solarized-base03);
+      font-size: 1.25em;
+      padding: 0.25em;
+    }
+    .text {
+      font-size: 0.75em;
+    }
+    .line {
+      stroke: var(--solarized-base0);
+    }
+
+    .tick {
+      stroke: var(--solarized-base0);
+    }
+  }
+
+  .x-axis {
+    .text {
+      text-anchor: start;
+      transform: rotate(45deg);
+    }
+
+    .title {
+      transform: translatey(2em);
+    }
+  }
+
+  .series.series {
+    stroke: green;
+    stroke-width: 2px;
+
+    text {
+      stroke: none;
+      stroke-width: 1px;
+    }
+  }
+
+  .series.bar-chart {
+    stroke-width: 30px;
+  }
 }  </style>
-<link rel="modulepreload" href="https://fixf.dev/nback/nback-f83b643d17d61bb0.js" crossorigin="anonymous" integrity="sha384-CkR85nw1eB14x/0VptcprmjYxWR2HQKwBaQprQz0yGBwxIy+RV2/rkueNI/aoK+M"><link rel="preload" href="https://fixf.dev/nback/nback-f83b643d17d61bb0_bg.wasm" crossorigin="anonymous" integrity="sha384-wEu6/jlECnguTqvj0SG97NWgGWeS1AKWl2D5Pb8iU5bSTG7c5JObuAIzCu6F6EEg" as="fetch" type="application/wasm"></head>
+<link rel="modulepreload" href="https://fixf.dev/nback/nback-74a600d317bdde25.js" crossorigin="anonymous" integrity="sha384-9nmwu0OMF79OzSYSfh8pdZNQRl2wKK6QSLMwa6vim6G46bC3cMQE/RuhxK1HO+rv"><link rel="preload" href="https://fixf.dev/nback/nback-74a600d317bdde25_bg.wasm" crossorigin="anonymous" integrity="sha384-TJ+3kphvMyjDp5dn2vMdtotvuqDagiWSxz8GaiO95PjsOq+ifrHDmTB3deUjzIfl" as="fetch" type="application/wasm"></head>
 
 <body>
   <div class="header">
@@ -251,8 +320,8 @@ p,
   </div>
 
 <script type="module">
-import init, * as bindings from 'https://fixf.dev/nback/nback-f83b643d17d61bb0.js';
-const wasm = await init({ module_or_path: 'https://fixf.dev/nback/nback-f83b643d17d61bb0_bg.wasm' });
+import init, * as bindings from 'https://fixf.dev/nback/nback-74a600d317bdde25.js';
+const wasm = await init({ module_or_path: 'https://fixf.dev/nback/nback-74a600d317bdde25_bg.wasm' });
 
 
 window.wasmBindings = bindings;
