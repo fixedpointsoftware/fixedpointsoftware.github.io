@@ -37,6 +37,14 @@ h6 {
   text-align: left;
 }
 
+.caption {
+  color: var(--solarized-base03);
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-top: 0.5em;
+  text-align: center;
+}
+
 p,
 .description-container {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -235,7 +243,7 @@ p,
   .axis {
     .title {
       color: var(--solarized-base03);
-      font-size: 1.25em;
+      font-size: 0.75em;
       padding: 0.25em;
     }
     .text {
@@ -262,7 +270,7 @@ p,
   }
 
   .series.series {
-    stroke: green;
+    stroke: var(--solarized-orange);
     stroke-width: 2px;
 
     text {
@@ -275,7 +283,7 @@ p,
     stroke-width: 30px;
   }
 }  </style>
-<link rel="modulepreload" href="https://fixf.dev/nback/nback-c3b7f37476f69239.js" crossorigin="anonymous" integrity="sha384-AadgRNu6owdX8mJKSrQf8qSnVWOp4nDhW/4QS6Yrgvu0oyU6ftd1nlO3uvBeD8bt"><link rel="preload" href="https://fixf.dev/nback/nback-c3b7f37476f69239_bg.wasm" crossorigin="anonymous" integrity="sha384-z2N1J5Vm7MAqVOxKTnfvhJ0QjBgllGqeLV4PwaQPLplofUFPzNh+4Dh01C90hicK" as="fetch" type="application/wasm"></head>
+<link rel="modulepreload" href="https://fixf.dev/nback/nback-fe73e0ca4b2d5375.js" crossorigin="anonymous" integrity="sha384-AadgRNu6owdX8mJKSrQf8qSnVWOp4nDhW/4QS6Yrgvu0oyU6ftd1nlO3uvBeD8bt"><link rel="preload" href="https://fixf.dev/nback/nback-fe73e0ca4b2d5375_bg.wasm" crossorigin="anonymous" integrity="sha384-0I+fk+03Fw1rAoZhVEd8ApZOKN67nK73DP2XGFOzBcyJQaX63lgv1oIaE7tz8yKm" as="fetch" type="application/wasm"></head>
 
 <body>
   <div class="header">
@@ -320,8 +328,8 @@ p,
   </div>
 
 <script type="module">
-import init, * as bindings from 'https://fixf.dev/nback/nback-c3b7f37476f69239.js';
-const wasm = await init({ module_or_path: 'https://fixf.dev/nback/nback-c3b7f37476f69239_bg.wasm' });
+import init, * as bindings from 'https://fixf.dev/nback/nback-fe73e0ca4b2d5375.js';
+const wasm = await init({ module_or_path: 'https://fixf.dev/nback/nback-fe73e0ca4b2d5375_bg.wasm' });
 
 
 window.wasmBindings = bindings;
