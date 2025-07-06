@@ -7,6 +7,90 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://fixf.dev/style.css" type="text/css">
   <style>
+/* For mobile devices */
+@media (max-width: 1000px) {
+  body {
+    margin: 0.25em auto;
+    padding: 0.25em;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  h3 {
+    font-size: 1.3em;
+  }
+
+  h4 {
+    font-size: 1.2em;
+  }
+
+  .game-container {
+    padding: 0.5em;
+    margin: 0.5em;
+  }
+
+  .close-button {
+    font-size: 1.75em;
+  }
+
+  button {
+    font-size: 0.7em;
+  }
+
+  .game-grid-cell,
+  .game-grid-cell-empty {
+    font-size: 5em;
+  }
+}
+
+/* For larger screens */
+@media (min-width: 1001px) {
+  body {
+    margin: 0.25em auto;
+    padding: 0.25em;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.4em;
+  }
+
+  h3 {
+    font-size: 1.3em;
+  }
+
+  h4 {
+    font-size: 1.2em;
+  }
+
+  .game-container {
+    padding: 2em;
+    margin: 1em;
+  }
+
+  .close-button {
+    font-size: 1.25em;
+  }
+
+  button {
+    font-size: 0.8em;
+  }
+
+  .game-grid-cell,
+  .game-grid-cell-empty {
+    font-size: 4em;
+  }
+}
+
 button,
 .eg-button {
   background-color: var(--solarized-base2);
@@ -15,7 +99,6 @@ button,
   color: var(--solarized-base03);
   cursor: pointer;
   font-family: "Microgramma W01 Med Extended";
-  font-size: 0.8em;
   margin: 0.5em;
   min-width: 5em;
   padding: 0.75em;
@@ -73,9 +156,8 @@ p,
   background-color: var(--fixf-background);
   border: 0;
   color: var(--solarized-yellow);
-  font-size: 1.25em;
   margin: 0;
-  min-width: 1.25em;
+  min-width: 1em;
   padding: 0;
   text-decoration: underline;
 }
@@ -99,8 +181,6 @@ p,
 .game-container {
   border: 1px solid var(--solarized-yellow);
   border-radius: 5px;
-  margin: 2em;
-  padding: 1em;
   text-align: center;
 }
 
@@ -111,23 +191,27 @@ p,
   margin-top: 2em;
 }
 
-.game-grid-cell {
+.game-grid-cell,
+.game-grid-cell-empty {
   border: 1px solid var(--solarized-blue);
-  font-size: 4em;
-  height: 1.5em;
-  text-align: center;
-  vertical-align: middle;
-  width: 1.5em;
+  font-family: 'PT Mono', 'Courier New', Courier, monospace;
+  width: 1em;
+}
+
+/* Fade in opacity for game grid cells */
+.game-grid-cell {
+  transition: color 0.5s ease-in;
+}
+
+.game-grid-cell-empty {
+  color: var(--fixf-background);
 }
 
 .game-header {
   border: 0;
-  margin: 0;
+  margin-bottom: 2em;
   padding: 0;
   text-align: right;
-}
-
-.game-over {
 }
 
 .game-over-title {
@@ -139,6 +223,7 @@ p,
 }
 
 .game-stats-name {
+  font-weight: bold;
   min-width: 5em;
   padding-right: 2em;
   text-align: right;
@@ -154,49 +239,36 @@ p,
   border-bottom: 1px solid var(--solarized-yellow);
   margin-left: 2em;
   margin-right: 2em;
-  margin-bottom: 2em;;
+  margin-bottom: 2em;
+  ;
 }
 
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-  body {
-    font-size: 0.8em;
-    margin: 0.5em auto;
-    padding: 0.5em;
-    width: 95%;
-  }
-
-  .header {
-    margin-bottom: 1em;
-    margin-top: 0.5em;
-  }
-
-  .logoimg {
-    max-height: 3em;
-  }
+.radio-group {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
 }
 
-@media (max-width: 480px) {
-  body {
-    font-size: 0.7em;
-    margin: 0.25em auto;
-    padding: 0.25em;
-  }
-
-  h1 {
-    font-size: 1em;
-  }
-
-  .header {
-    margin-bottom: 0.5em;
-    bottom: 0.5em;
-    margin-top: 0.25em;
-  }
-
-  .logoimg {
-    max-height: 2.5em;
-  }
+.radio-label {
+  align-items: center;
+  color: var(--solarized-base03);
+  cursor: pointer;
+  display: flex;
+  font-size: 0.9em;
+  gap: 0.5em;
+  text-align: left;
 }
+
+.radio-label input[type="radio"] {
+  accent-color: var(--solarized-yellow);
+  cursor: pointer;
+  margin: 0;
+}
+
+.radio-label:hover {
+  color: var(--solarized-base02);
+}
+
 
 .description-container {
   margin-bottom: 1em;
@@ -246,9 +318,11 @@ p,
       font-size: 0.75em;
       padding: 0.25em;
     }
+
     .text {
       font-size: 0.75em;
     }
+
     .line {
       stroke: var(--solarized-base0);
     }
@@ -283,7 +357,7 @@ p,
     stroke-width: 30px;
   }
 }  </style>
-<link rel="modulepreload" href="https://fixf.dev/nback/nback-76f346662a29308e.js" crossorigin="anonymous" integrity="sha384-AadgRNu6owdX8mJKSrQf8qSnVWOp4nDhW/4QS6Yrgvu0oyU6ftd1nlO3uvBeD8bt"><link rel="preload" href="https://fixf.dev/nback/nback-76f346662a29308e_bg.wasm" crossorigin="anonymous" integrity="sha384-Y7HdPrngeOYoOHBbUWMOYQpd0i55QHlZXUBWFsNovky65SLUFefvPNlhMJ6rpois" as="fetch" type="application/wasm"></head>
+<link rel="modulepreload" href="https://fixf.dev/nback/nback-3f2d867e04cbafeb.js" crossorigin="anonymous" integrity="sha384-WEf33wIobT6N+bhIG1e5lBvsqq0dro9QgJ04b9fEwxdSIGTKQnheo4n0h9CGIoEX"><link rel="preload" href="https://fixf.dev/nback/nback-3f2d867e04cbafeb_bg.wasm" crossorigin="anonymous" integrity="sha384-SBZyYmptBRZGdvgWTUAb1e/1fipxA/1+aRQagTdK9OXJQVp/NU4RlFbQzgkoeUmn" as="fetch" type="application/wasm"></head>
 
 <body>
   <div class="header">
@@ -328,8 +402,8 @@ p,
   </div>
 
 <script type="module">
-import init, * as bindings from 'https://fixf.dev/nback/nback-76f346662a29308e.js';
-const wasm = await init({ module_or_path: 'https://fixf.dev/nback/nback-76f346662a29308e_bg.wasm' });
+import init, * as bindings from 'https://fixf.dev/nback/nback-3f2d867e04cbafeb.js';
+const wasm = await init({ module_or_path: 'https://fixf.dev/nback/nback-3f2d867e04cbafeb_bg.wasm' });
 
 
 window.wasmBindings = bindings;
