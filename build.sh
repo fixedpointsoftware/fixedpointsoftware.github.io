@@ -1,6 +1,6 @@
 #!/bin/bash
 
 ./content2html.sh index.content.html page.template.html index.html \
-  --replace-title="Fixed Point Software" \
+  --replace-title="fix𝑓" \
   --replace-host="" \
   --replace-styleextensions=""
