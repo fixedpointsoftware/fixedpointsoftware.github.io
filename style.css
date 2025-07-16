@@ -68,8 +68,6 @@ a {
 .content,
 .footer,
 .acknowledgements {
-  margin-left: 1em auto;
-  margin-right: 1em auto;
   text-align: left;
   width: 90%;
 }
@@ -116,7 +114,6 @@ a {
 .logofix,
 .logof {
   font-family: 'Courier New', Courier, monospace;
-  font-weight: medium;
 }
 
 .logofix {
