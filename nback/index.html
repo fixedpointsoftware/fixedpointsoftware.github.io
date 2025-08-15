@@ -7,24 +7,24 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://fixf.dev/style.css" type="text/css">
   <style>
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+h4 {
+  font-size: 1.1em;
+}
+
 /* For mobile devices */
 @media (max-width: 1000px) {
-  h1 {
-    font-size: 1.5em;
-  }
-
-  h2 {
-    font-size: 1.4em;
-  }
-
-  h3 {
-    font-size: 1.3em;
-  }
-
-  h4 {
-    font-size: 1.2em;
-  }
-
   .game-container {
     padding: 0.5em;
     margin: 0.5em;
@@ -46,22 +46,6 @@
 
 /* For larger screens */
 @media (min-width: 1001px) {
-  h1 {
-    font-size: 1.5em;
-  }
-
-  h2 {
-    font-size: 1.4em;
-  }
-
-  h3 {
-    font-size: 1.3em;
-  }
-
-  h4 {
-    font-size: 1.2em;
-  }
-
   .game-container {
     padding: 2em;
     margin: 1em;
@@ -226,12 +210,9 @@ p,
 }
 
 .menu-container {
-  border-top: 1px solid var(--solarized-yellow);
-  border-bottom: 1px solid var(--solarized-yellow);
   margin-left: 2em;
   margin-right: 2em;
   margin-bottom: 2em;
-  ;
 }
 
 .radio-group {
@@ -348,7 +329,7 @@ p,
     stroke-width: 30px;
   }
 }  </style>
-<link rel="modulepreload" href="https://fixf.dev/nback/nback-3f2d867e04cbafeb.js" crossorigin="anonymous" integrity="sha384-WEf33wIobT6N+bhIG1e5lBvsqq0dro9QgJ04b9fEwxdSIGTKQnheo4n0h9CGIoEX"><link rel="preload" href="https://fixf.dev/nback/nback-3f2d867e04cbafeb_bg.wasm" crossorigin="anonymous" integrity="sha384-1LjCmLB4TOzOJdGcvEawjq2K/tgrYo3FlgWbMx8kQjz5invlH77j3ryKlew6WiMp" as="fetch" type="application/wasm"></head>
+<link rel="modulepreload" href="https://fixf.dev/nback/nback-429e482de9726641.js" crossorigin="anonymous" integrity="sha384-WEf33wIobT6N+bhIG1e5lBvsqq0dro9QgJ04b9fEwxdSIGTKQnheo4n0h9CGIoEX"><link rel="preload" href="https://fixf.dev/nback/nback-429e482de9726641_bg.wasm" crossorigin="anonymous" integrity="sha384-oWJvpdlJi8F5Ckiwd7UbL9Qm5XcvaOJNjMXY0KIGpToexqFhx66XcjoEOeYoQft2" as="fetch" type="application/wasm"></head>
 
 <body>
   <div class="header">
@@ -393,8 +374,8 @@ p,
   </div>
 
 <script type="module">
-import init, * as bindings from 'https://fixf.dev/nback/nback-3f2d867e04cbafeb.js';
-const wasm = await init({ module_or_path: 'https://fixf.dev/nback/nback-3f2d867e04cbafeb_bg.wasm' });
+import init, * as bindings from 'https://fixf.dev/nback/nback-429e482de9726641.js';
+const wasm = await init({ module_or_path: 'https://fixf.dev/nback/nback-429e482de9726641_bg.wasm' });
 
 
 window.wasmBindings = bindings;
