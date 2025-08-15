@@ -51,11 +51,9 @@ body {
   color: var(--solarized-base00);
   display: flex;
   flex-direction: column;
-  font-family: "Microgramma W01 Med Extended";
-  padding-left: 10em;
-  max-width: 40em;
+  font-family: "Georgia";
+  padding-left: 1em;
   min-height: 90vh;
-  text-align: center;
 }
 
 a {
@@ -65,9 +63,15 @@ a {
 
 /* Page width*/
 .header,
-.content,
 .footer,
 .acknowledgements {
+  text-align: left;
+  width: 95%;
+}
+.content {
+  align-content: center;
+  margin: 0 auto;
+  max-width: 40em;
   text-align: left;
   width: 90%;
 }
@@ -77,16 +81,17 @@ a {
 }
 
 .header {
-  border-bottom: var(--solarized-orange) 1px solid;
   margin-bottom: 1em;
   margin-top: 1em;
 }
 
-.footer {
-  border-top: var(--solarized-orange) 1px solid;
+.footer,
+.acknowledgements {
   color: black;
   font-size: 1em;
   font-weight: bold;
+  opacity: 0.35;
+  text-align: right;
 }
 
 .company {
@@ -153,7 +158,7 @@ a img {
 
 /* Media Queries for Responsive Design */
 @media (max-width: 768px) {
-  body {
+  .content {
     margin: 0.5em auto;
     padding: 0.5em;
     width: 95%;
@@ -170,7 +175,7 @@ a img {
 }
 
 @media (max-width: 480px) {
-  body {
+  .content {
     margin: 0.25em auto;
     padding: 0.25em;
   }
