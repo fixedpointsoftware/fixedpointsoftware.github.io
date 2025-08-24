@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html>
 
+<!--
+  Template placeholders that can be substituted:
+
+  - urlprefix: Base urlprefix, in case app is urlprefixed on a different domain. E.g. "https://fixf.dev:443".
+  - content: The app's HTML content.
+  - extendedststyle: The app's CSS extensions and override's if any.
+
+-->
+
 <head>
   <title>{{title}}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
-  <link rel="stylesheet" href="{{host}}style.css" type="text/css">
-  <style>
-    {{styleextensions}}
-  </style>
+  <!-- The default styles for fixf -->
+  <link rel="stylesheet" href="https://fixf.dev/style.css" type="text/css">
+
+  <!-- Extended or override styles for the application -->
+  <link rel="stylesheet" href="{{extendedstyle}}" type="text/css">
+
+  <!-- For test: Instruct trunk to copy extendedststyle into content directory -->
+  <link data-trunk rel="css" href="style.css"/>
 </head>
 
 <body>
   <div class="header">
-    <a href="{{host}}index.html">
-      <img src="{{host}}icons/fixflogo.png" class="logoimg" />
+    <a href="{{urlprefix}}/index.html">
+      <img src="https://fixf.dev/icons/fixflogo.png" class="logoimg" />
     </a>
   </div>
 
@@ -24,18 +37,18 @@
 
   <div class="footer">
     <p>
-      <a href="{{host}}index.html">
-        <img src="{{host}}icons/home1.png"
+      <a href="{{urlprefix}}/index.html">
+        <img src="https://fixf.dev/icons/home1.png"
           style="height: 1em; vertical-align: middle;" />
       </a>
       |
       <a href="mailto:info@fixf.dev">
-        <img src="{{host}}icons/mail2.png"
+        <img src="https://fixf.dev/icons/mail2.png"
           style="height: 1.5em; vertical-align: middle;" />
       </a>
       |
       <a href="https://bsky.app/profile/fixedpointsoftware.bsky.social">
-        <img src="{{host}}icons/bluesky.png"
+        <img src="https://fixf.dev/icons/bluesky.png"
           style="height: 1em; vertical-align: middle;" />
       </a>
     </p>

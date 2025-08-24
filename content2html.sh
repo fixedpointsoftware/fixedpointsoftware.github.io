@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Convert a content file containing a snippet of HTML to  a complete HTML file using
 # the specified template file.
@@ -18,8 +18,18 @@ if ! [ -e "$TEMPLATE_FILE" ]; then
     echo "$USAGE"
     exit 1
 fi
+if [ -z "$OUTPUT_FILE" ]; then
+    echo "Output file not specified!"
+    echo "$USAGE"
+    exit 1
+fi
+if ! touch "$OUTPUT_FILE"; then
+    echo "Cannot create output file!"
+    echo "$USAGE"
+    exit 1
+fi
 
-# Replace the placeholder "{{content}}" in $OUTPUT_FILE with the contents of $CONTENT_FILE.
+# Replace the placeholder "{{content}}" in $TEMPLATE_FILE with the contents of $CONTENT_FILE.
 sed "/{{content}}/{
     r $CONTENT_FILE
     d
@@ -33,22 +43,5 @@ for arg in "$@"; do
         key=${arg%%=*}
         value=${arg#*=}
         sed -i .bak "s/{{${key#--replace-}}}/$value/g" $OUTPUT_FILE
-    fi
-done
-
-# For any command line argument of the form --freplace-xxx=filename, replace
-# the placeholder "{{xxx}}" in the template with the contents of filename.
-for arg in "$@"; do
-    if [[ $arg == --freplace-* ]]; then
-        key=${arg%%=*}
-        file=${arg#*=}
-        if [ -e "$file" ]; then
-            sed -i .bak "/{{${key#--freplace-}}}/{
-                r $file
-                d
-            }" $OUTPUT_FILE
-        else
-            echo "File $file not found for replacement!"
-        fi
     fi
 done
