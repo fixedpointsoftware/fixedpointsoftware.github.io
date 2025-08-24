@@ -1,0 +1,322 @@
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+h3 {
+  font-size: 1.25em;
+}
+
+h4 {
+  font-size: 1.1em;
+}
+
+/* For mobile devices */
+@media (max-width: 1000px) {
+  .game-container {
+    padding: 0.5em;
+    margin: 0.5em;
+  }
+
+  .close-button {
+    font-size: 1.75em;
+  }
+
+  button {
+    font-size: 0.7em;
+  }
+
+  .game-grid-cell,
+  .game-grid-cell-empty {
+    font-size: 5em;
+  }
+}
+
+/* For larger screens */
+@media (min-width: 1001px) {
+  .game-container {
+    padding: 2em;
+    margin: 1em;
+  }
+
+  .close-button {
+    font-size: 1.25em;
+  }
+
+  button {
+    font-size: 0.8em;
+  }
+
+  .game-grid-cell,
+  .game-grid-cell-empty {
+    font-size: 4em;
+  }
+}
+
+button,
+.eg-button {
+  background-color: var(--solarized-base2);
+  border: 1px solid var(--solarized-yellow);
+  border-radius: 5px;
+  color: var(--solarized-base03);
+  cursor: pointer;
+  font-family: "Microgramma W01 Med Extended";
+  font-size: 0.8em;
+  margin: 0.5em;
+  min-width: 5em;
+  padding: 0.75em;
+  text-transform: uppercase;
+}
+
+button[disabled=true],
+button[disabled="disabled"] {
+  background-color: var(--solarized-base0);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--fixf-darkblue);
+  font-family: Georgia, serif;
+  text-align: left;
+}
+
+.caption {
+  color: var(--solarized-base03);
+  font-size: 0.8em;
+  font-weight: bold;
+  margin-top: 0.5em;
+  text-align: center;
+}
+
+p,
+.description-container {
+  line-height: 1.75em;
+}
+
+.cfg-container {
+  margin-bottom: 1em;
+}
+
+.cfg-input {
+  padding-left: 1em;
+  text-align: left;
+}
+
+.cfg-label {
+  text-align: right;
+}
+
+.cfg-table {
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+
+.close-button {
+  background-color: var(--fixf-background);
+  border: 0;
+  color: var(--solarized-yellow);
+  margin: 0;
+  min-width: 1em;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.eg-button {
+  cursor: text;
+  margin: 0em;
+  padding-bottom: 0.25em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.5em;
+  vertical-align: baseline;
+}
+
+.game-body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-container {
+  border: 1px solid var(--solarized-yellow);
+  border-radius: 5px;
+  text-align: center;
+}
+
+.game-grid {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 3em;
+  margin-top: 2em;
+}
+
+.game-grid-cell,
+.game-grid-cell-empty {
+  border: 1px solid var(--solarized-blue);
+  font-family: 'PT Mono', 'Courier New', Courier, monospace;
+  width: 1em;
+}
+
+/* Fade in opacity for game grid cells */
+.game-grid-cell {
+  transition: color 0.5s ease-in;
+}
+
+.game-grid-cell-empty {
+  color: var(--fixf-background);
+}
+
+.game-header {
+  border: 0;
+  margin-bottom: 2em;
+  padding: 0;
+  text-align: right;
+}
+
+.game-over-title {
+  color: var(--solarized-orange);
+  font-size: 3.5em;
+  font-weight: bolder;
+  padding: 1em;
+  text-align: center;
+}
+
+.game-stats-name {
+  font-weight: bold;
+  min-width: 5em;
+  padding-right: 2em;
+  text-align: right;
+}
+
+.game-stats-value {
+  min-width: 5em;
+  text-align: left;
+}
+
+.menu-container {
+  margin-left: 2em;
+  margin-right: 2em;
+  margin-bottom: 2em;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.radio-label {
+  align-items: center;
+  color: var(--solarized-base03);
+  cursor: pointer;
+  display: flex;
+  font-size: 0.9em;
+  gap: 0.5em;
+  text-align: left;
+}
+
+.radio-label input[type="radio"] {
+  accent-color: var(--solarized-yellow);
+  cursor: pointer;
+  margin: 0;
+}
+
+.radio-label:hover {
+  color: var(--solarized-base02);
+}
+
+
+.description-container {
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+}
+
+.description {
+  text-align: justify;
+}
+
+.container-toggle,
+.container-toggle:hover {
+  background-color: var(--fixf-background);
+  border: 0;
+  color: var(--fixf-darkblue);
+  cursor: pointer;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 0;
+  min-width: 1em;
+  padding: 0;
+}
+
+
+.chart {
+  .axis.left {
+    .title {
+      transform: rotate(270deg);
+    }
+  }
+
+  .axis.right {
+    .title {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+
+.chart {
+  max-width: 1332px;
+
+  .axis {
+    .title {
+      color: var(--solarized-base03);
+      font-size: 0.75em;
+      padding: 0.25em;
+    }
+
+    .text {
+      font-size: 0.75em;
+    }
+
+    .line {
+      stroke: var(--solarized-base0);
+    }
+
+    .tick {
+      stroke: var(--solarized-base0);
+    }
+  }
+
+  .x-axis {
+    .text {
+      text-anchor: start;
+      transform: rotate(45deg);
+    }
+
+    .title {
+      transform: translatey(2em);
+    }
+  }
+
+  .series.series {
+    stroke: var(--solarized-orange);
+    stroke-width: 2px;
+
+    text {
+      stroke: none;
+      stroke-width: 1px;
+    }
+  }
+
+  .series.bar-chart {
+    stroke-width: 30px;
+  }
+}
