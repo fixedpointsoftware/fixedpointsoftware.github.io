@@ -1,0 +1,31 @@
+/* ============================================================
+   fixfdev-only styles — loaded after the shared common style.css.
+   Everything else (ground, type, .content column, .sidebar, footer)
+   comes from ../common/assets/style.css.
+   ============================================================ */
+
+/* ── Masthead — the fix𝑓 wordmark ───────────────────────── */
+.masthead {
+  padding-top: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.wordmark {
+  display: block;
+  height: auto;
+  width: clamp(75px, 21vw, 105px);
+}
+
+/* ── App directory — plain text links ───────────────────── */
+.app-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.app-list a {
+  font-size: 1.15rem;
+}

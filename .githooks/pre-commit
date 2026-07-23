@@ -1,0 +1,13 @@
+#!/bin/sh
+# Enforce that commits to fixfdev-site are made as the deploy identity.
+EXPECTED_NAME="dev"
+EXPECTED_EMAIL="dev@fixf.dev"
+NAME=$(git config user.name)
+EMAIL=$(git config user.email)
+
+if [ "$NAME" != "$EXPECTED_NAME" ] || [ "$EMAIL" != "$EXPECTED_EMAIL" ]; then
+  echo "ERROR: commits must be authored by '$EXPECTED_NAME <$EXPECTED_EMAIL>'."
+  echo "       current identity: '$NAME <$EMAIL>'"
+  echo "Fix: git config user.name dev && git config user.email dev@fixf.dev"
+  exit 1
+fi

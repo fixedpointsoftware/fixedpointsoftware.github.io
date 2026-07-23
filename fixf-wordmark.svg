@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 136" role="img" aria-label="fixƒ">
+  <!-- "fix" — sharp monospace, light weight, near-black -->
+  <text x="0" y="92"
+        font-family="'SF Mono', Consolas, Menlo, 'Courier New', monospace"
+        font-size="74" font-weight="400" letter-spacing="-1"
+        fill="#1c1c1c">fix</text>
+  <!-- the function ƒ — serif italic, fixf brand blue. The viewBox leaves
+       generous room above and below the baseline (y=92) so the tall
+       ascender and italic descender never clip. -->
+  <text x="146" y="92"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-style="italic" font-size="104"
+        fill="#175683">f</text>
+</svg>
